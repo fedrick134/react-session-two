@@ -1,5 +1,5 @@
 describe("create todo spec", () => {
-    before(() => {
+    beforeEach(() => {
         // this will launch the page in cypress browser
         cy.visit("http://localhost:3000");
     });
@@ -25,6 +25,10 @@ describe("create todo spec", () => {
 
     // 2. Mark todo as complete / incomplete
     it("Should mark todo", () => {
+        cy.get("input").type("Sprint meeting");
+        cy.get("[title='Add Todo']").click();
+        cy.get("input").type("Code");
+        cy.get("[title='Add Todo']").click();
         // mark a first todo as complete
         cy.get("button.mark-complete").eq(0).click();
 
@@ -34,6 +38,10 @@ describe("create todo spec", () => {
 
     // 3. Delete a todo
     it("Should delete a todo", () => {
+        cy.get("input").type("Sprint meeting");
+        cy.get("[title='Add Todo']").click();
+        cy.get("input").type("Code");
+        cy.get("[title='Add Todo']").click();
         cy.get("li:nth-child(2) button.delete").click();
     })
 
