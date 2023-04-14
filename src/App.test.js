@@ -6,5 +6,5 @@ test('renders learn react link', () => {
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 
-  expect(1).toBe(2)
+  expect(1).toBe(3)
 });
